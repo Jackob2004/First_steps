@@ -14,7 +14,7 @@
          this.speed = 0;
      }
 
-     void displayBasicInfromation(){
+     void displayBasicInformation(){
          System.out.println("Vehicle name " + name + " Vehicle speed " + speed);
      }
 
@@ -35,7 +35,7 @@
      }
  }
 
- class Car extends Vehicle{ // Car class (subclass) inherits the attributes and methods from the Vehicle class
+ class Car extends Vehicle{ //  Car class (subclass) inherits the attributes and methods from the Vehicle class
     String vehicleType = "Car";
      int numberOfWheels;
 
@@ -46,7 +46,7 @@
          this.numberOfWheels = numberOfWheels;
      }
 
-     void displayAdvencedInformation(){
+     void displayAdvancedInformation(){
          System.out.println("Vehicle name " + name + " Vehicle speed " + speed + " Vehicle type " + vehicleType + " Number of wheels " + numberOfWheels);
      }
 
@@ -69,6 +69,37 @@
 
 
  }
+ //superclass
+ class Animal{
+    String name = "bob";
+
+     void display(){
+         System.out.println("Animal name: " + name);
+     }
+     Animal(){
+         System.out.println("Hi I am animal");
+     }
+     Animal(String name){
+         System.out.println("Hi i am " + name);
+     }
+
+ }
+
+ class Hog extends Animal{
+    String name = "Hog";
+
+    void display(){
+        System.out.println("Animal name: " + name);
+    }
+    void fullDisplay(){
+        super.display(); //super keyword
+
+    }
+    Hog(String name){
+        super(name); // super keyword
+        System.out.println("Hi I am Hog");
+    }
+ }
 
 
 
@@ -76,9 +107,12 @@ public class M {
     public static void main(String[] args) {
 
         Car fred2 = new Car("Ford", 44,"Car", 4);
-        fred2.displayBasicInfromation();
-        fred2.displayAdvencedInformation();
+        fred2.displayBasicInformation();
+        fred2.displayAdvancedInformation();
 
+        System.out.println();
+        Hog hog1 = new Hog("marcus");
+        hog1.fullDisplay();
 
     }
 }
